@@ -53,7 +53,23 @@ class MyHomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: transactions.map((tx) {
               return Card(
-                child: Text(tx.title),
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      child: Text(tx.amount.toString()),
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Container(
+                          child: Text(tx.title),
+                        ),
+                        Container(
+                          child: Text(tx.date.toString()),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               );
             }).toList(),
           ),
