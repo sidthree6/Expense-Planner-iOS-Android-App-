@@ -56,15 +56,49 @@ class MyHomePage extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Container(
-                      child: Text(tx.amount.toString()),
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 20.0,
+                        horizontal: 25.0,
+                      ),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                        color: Colors.black,
+                        width: 1,
+                      )),
+                      padding: const EdgeInsets.all(
+                        10.0,
+                      ),
+                      child: Text(
+                        tx.amount.toString(),
+                        style: TextStyle(
+                          color: Colors.indigo[500],
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Container(
-                          child: Text(tx.title),
+                          margin: const EdgeInsets.all(3.0),
+                          child: Text(
+                            tx.title,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                            ),
+                          ),
                         ),
                         Container(
-                          child: Text(tx.date.toString()),
+                          margin: const EdgeInsets.all(3.0),
+                          child: Text(
+                            tx.date.toString(),
+                            style: const TextStyle(
+                              fontSize: 12.0,
+                              color: Color.fromARGB(255, 65, 65, 65),
+                            ),
+                          ),
                         ),
                       ],
                     )
